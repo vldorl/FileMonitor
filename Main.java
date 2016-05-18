@@ -1,5 +1,3 @@
-
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -11,6 +9,7 @@ import net.contentobjects.jnotify.linux.JNotify_linux;
 
 public class Main {
 		
+		//главный метод программы, точка входа
 		public static void main(String[] args) throws Exception{
 		
 		System.out.println("Input directory name (from " + System.getProperty("user.home")+ "/ )");//для ввода просматриваемой директории
