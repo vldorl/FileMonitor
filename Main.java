@@ -13,15 +13,16 @@ public class Main {
 		
 		public static void main(String[] args) throws Exception{
 		
-		System.out.println("Input directory name (from " + System.getProperty("user.home")+ "/ )");
+		System.out.println("Input directory name (from " + System.getProperty("user.home")+ "/ )");//для ввода просматриваемой директории
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String str = in.readLine();
 			
 		// путь для поиска
 	    String path = System.getProperty("user.home") +"/"+ str + "/";
 	    
-		System.out.println("Watching Directory: " + path);
+		System.out.println("Watching Directory: " + path);//вывод в консоль пути, который мониторим
 		
+		// маска,какие события мониторим
 	    int mask = JNotify.FILE_CREATED  | 
 	               JNotify.FILE_DELETED  | 
 	               JNotify.FILE_MODIFIED | 
@@ -29,11 +30,14 @@ public class Main {
 
 	    //разрешаем поиск в подкаталогах
 	    boolean watchSubtree = true;
-
+		
+		//запускаем мониторинг
 	    int watchID = JNotify.addWatch(path, mask, watchSubtree, new Listener());
 	    
+		//хз зачем, я сопипастил
 	    Thread.sleep(1000000);
-
+		
+		//неведомая фигня
 	    boolean res = JNotify.removeWatch(watchID);
 	    if (!res) {
 	      
